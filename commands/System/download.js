@@ -82,7 +82,7 @@ ${description}
 ${modules}
 \`\`\``);
 
-    const collector = msg.channel.createCollector(m => m.author === msg.author, { time: 20000 });
+    const collector = msg.channel.createMessageCollector(m => m.author === msg.author, { time: 20000 });
     collector.on("message", (m) => {
       if (m.content.toLowerCase() === "no") collector.stop("aborted");
       if (m.content.toLowerCase() === "yes") collector.stop("success");
